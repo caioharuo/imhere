@@ -57,7 +57,14 @@ export function Home() {
           placeholderTextColor={'#6B6B6B'}
         />
 
-        <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
+        <TouchableOpacity
+          style={{
+            ...styles.button,
+            opacity: participantName ? 1 : 0.5,
+          }}
+          disabled={!participantName}
+          onPress={handleParticipantAdd}
+        >
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
       </View>

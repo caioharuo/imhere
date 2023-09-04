@@ -40,6 +40,15 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  disabledButton: {
+    width: 56,
+    height: 56,
+    borderRadius: 5,
+    backgroundColor: '#31CF67',
+    alignItems: 'center',
+    justifyContent: 'center',
+    opacity: 0.3,
+  },
   buttonText: {
     color: '#FFF',
     fontSize: 24,
