@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   ScrollView,
   FlatList,
+  Alert,
 } from 'react-native';
 
 import { Participant } from '../../components/Participant';
@@ -14,11 +15,25 @@ export function Home() {
   const participants = ['Caio', 'Rodrigo', 'Diego'];
 
   function handleParticipantAdd() {
-    console.log('oi');
+    if (participants.includes('Rodrigo')) {
+      return Alert.alert(
+        'Participante existe',
+        'Já existe um participante na lista com esse nome.'
+      );
+    }
   }
 
   function handleParticipantRemove(name: string) {
-    console.log(`Removendo ${name}`);
+    Alert.alert('Remover', `Remover o participante ${name}?`, [
+      {
+        text: 'Sim',
+        onPress: () => Alert.alert('Deletado!'),
+      },
+      {
+        text: 'Não',
+        style: 'cancel',
+      },
+    ]);
   }
 
   return (
